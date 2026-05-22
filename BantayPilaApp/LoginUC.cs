@@ -74,7 +74,10 @@ namespace BantayPilaApp
                                 }
                                 else if (userRole == "Doctor")
                                 {
-                                    MessageBox.Show("Doctor Dashboard coming soon!");
+                                    DoctorDashboardUC docDash = new DoctorDashboardUC();
+                                    docDash.Dock = DockStyle.Fill;
+                                    this.Parent.Controls.Add(docDash);
+                                    this.Parent.Controls.Remove(this);
                                 }
                             }
 

@@ -57,5 +57,80 @@ namespace BantayPilaApp
                 }
             }
         }
+
+        private void btnSendToDoctor_Click(object sender, EventArgs e)
+        {
+
+            if (dgvQueue.CurrentRow == null)
+            {
+                MessageBox.Show("Please click on a patient in the list first!", "Select Patient", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // 
+            }
+
+            if (string.IsNullOrWhiteSpace(txtSymptoms.Text))
+            {
+                MessageBox.Show("Please enter the patient's symptoms before sending them to the doctor.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+ 
+            int visitID = Convert.ToInt32(dgvQueue.CurrentRow.Cells["VisitID"].Value);
+
+            string connString = "Data Source=bantaypila.db;Version=3;";
+
+            using (SQLiteConnection conn = new SQLiteConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+
+
+                    string updateQuery = "UPDATE Visits SET Symptoms = @symptoms, Status = 'Pending_Doctor' WHERE VisitID = @visitID";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(updateQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@symptoms", txtSymptoms.Text);
+                        cmd.Parameters.AddWithValue("@visitID", visitID);
+                        cmd.ExecuteNonQuery();
+                    }
+
+ 
+                    MessageBox.Show("Patient sent to the Doctor successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    txtSymptoms.Clear();
+
+
+                    string refreshQuery = @"SELECT v.VisitID, p.FullName, p.Gender, v.Priority 
+                                FROM Visits v 
+                                JOIN Patients p ON v.PatientID = p.PatientID 
+                                WHERE v.Status = 'Pending_Nurse'";
+
+                    using (SQLiteCommand cmdRefresh = new SQLiteCommand(refreshQuery, conn))
+                    {
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmdRefresh))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            dgvQueue.DataSource = dt;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void txtSymptoms_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
