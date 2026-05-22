@@ -11,9 +11,9 @@ using System.Data.SQLite;
 
 namespace BantayPilaApp
 {
-    public partial class GuardDashBoardUC : UserControl
+    public partial class GuardDashboardUC : UserControl
     {
-        public GuardDashBoardUC()
+        public GuardDashboardUC()
         {
             InitializeComponent();
         }

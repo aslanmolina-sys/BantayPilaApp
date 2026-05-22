@@ -52,11 +52,32 @@ namespace BantayPilaApp
                             {
                                 string userRole = reader["Role"].ToString();
 
-                                MessageBox.Show("Access Granted! You are logged in as: " + userRole,
-                                                "Login Successful",
-                                                MessageBoxButtons.OK,
-                                                MessageBoxIcon.Information);
+
+                                if (userRole == "Guard")
+                                {
+
+                                    GuardDashboardUC guardDash = new GuardDashboardUC();
+                                    guardDash.Dock = DockStyle.Fill;
+
+
+                                    this.Parent.Controls.Add(guardDash);
+
+
+                                    this.Parent.Controls.Remove(this);
+                                }
+                                else if (userRole == "Nurse")
+                                {
+                                    NurseDashboardUC nurseDash = new NurseDashboardUC();
+                                    nurseDash.Dock = DockStyle.Fill;
+                                    this.Parent.Controls.Add(nurseDash);
+                                    this.Parent.Controls.Remove(this);
+                                }
+                                else if (userRole == "Doctor")
+                                {
+                                    MessageBox.Show("Doctor Dashboard coming soon!");
+                                }
                             }
+
                             else
                             {
                                 MessageBox.Show("Incorrect Username or Password.",

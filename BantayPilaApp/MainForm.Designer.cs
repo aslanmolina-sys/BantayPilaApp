@@ -37,7 +37,7 @@
             this.panelSidebar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panelSidebar.Location = new System.Drawing.Point(12, 12);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(219, 547);
+            this.panelSidebar.Size = new System.Drawing.Size(219, 608);
             this.panelSidebar.TabIndex = 0;
             this.panelSidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSidebar_Paint);
             // 
@@ -46,7 +46,7 @@
             this.panelMain.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelMain.Location = new System.Drawing.Point(260, 12);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(418, 547);
+            this.panelMain.Size = new System.Drawing.Size(1010, 608);
             this.panelMain.TabIndex = 1;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -54,7 +54,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(1304, 632);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSidebar);
             this.Name = "MainForm";

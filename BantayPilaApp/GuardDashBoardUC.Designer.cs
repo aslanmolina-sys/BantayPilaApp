@@ -1,6 +1,6 @@
 ﻿namespace BantayPilaApp
 {
-    partial class GuardDashBoardUC
+    partial class GuardDashboardUC
     {
         /// <summary> 
         /// Required designer variable.
