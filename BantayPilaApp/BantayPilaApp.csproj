@@ -70,6 +70,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GuardDashBoardUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GuardDashBoardUC.Designer.cs">
+      <DependentUpon>GuardDashBoardUC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GuardDashBoardUC.resx">
+      <DependentUpon>GuardDashBoardUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginUC.resx">
       <DependentUpon>LoginUC.cs</DependentUpon>
     </EmbeddedResource>

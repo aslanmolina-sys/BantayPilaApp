@@ -46,7 +46,7 @@
             this.panelMain.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelMain.Location = new System.Drawing.Point(260, 12);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(324, 547);
+            this.panelMain.Size = new System.Drawing.Size(418, 547);
             this.panelMain.TabIndex = 1;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
