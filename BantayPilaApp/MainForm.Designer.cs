@@ -58,7 +58,7 @@
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSidebar);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "/  ";
             this.ResumeLayout(false);
 
         }
