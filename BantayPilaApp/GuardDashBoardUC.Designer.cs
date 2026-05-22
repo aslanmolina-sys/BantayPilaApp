@@ -33,6 +33,7 @@
             this.cmbPriority = new System.Windows.Forms.ComboBox();
             this.btnAddPatient = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFullName
@@ -84,16 +85,27 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "GuardDashBoard";
             // 
-            // GuardDashBoardUC
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(236, 280);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(103, 23);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // GuardDashboardUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddPatient);
             this.Controls.Add(this.cmbPriority);
             this.Controls.Add(this.cmbGender);
             this.Controls.Add(this.txtFullName);
-            this.Name = "GuardDashBoardUC";
+            this.Name = "GuardDashboardUC";
             this.Size = new System.Drawing.Size(369, 323);
             this.Load += new System.EventHandler(this.GuardDashBoardUC_Load);
             this.ResumeLayout(false);
@@ -108,5 +120,6 @@
         private System.Windows.Forms.ComboBox cmbPriority;
         private System.Windows.Forms.Button btnAddPatient;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

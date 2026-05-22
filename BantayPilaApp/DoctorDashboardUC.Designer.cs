@@ -33,6 +33,7 @@
             this.txtDoctorNotes = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnComplete = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctorQueue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,10 +84,22 @@
             this.btnComplete.UseVisualStyleBackColor = true;
             this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(819, 476);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(110, 32);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // DoctorDashboardUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnComplete);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDoctorNotes);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.TextBox txtDoctorNotes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnComplete;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

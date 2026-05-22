@@ -117,5 +117,24 @@ namespace BantayPilaApp
                 }
             }
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // 1. Ask the user if they are sure they want to log out
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // 2. Create a fresh Login screen
+                LoginUC loginScreen = new LoginUC();
+                loginScreen.Dock = DockStyle.Fill;
+
+                // 3. Inject the Login screen back into the main window
+                this.Parent.Controls.Add(loginScreen);
+
+                // 4. Destroy the current Guard dashboard
+                this.Parent.Controls.Remove(this);
+            }
+        }
     }
 }

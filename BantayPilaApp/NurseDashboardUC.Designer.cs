@@ -33,6 +33,7 @@
             this.btnSendToDoctor = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQueue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // btnSendToDoctor
             // 
             this.btnSendToDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendToDoctor.Location = new System.Drawing.Point(601, 473);
+            this.btnSendToDoctor.Location = new System.Drawing.Point(602, 410);
             this.btnSendToDoctor.Name = "btnSendToDoctor";
             this.btnSendToDoctor.Size = new System.Drawing.Size(151, 33);
             this.btnSendToDoctor.TabIndex = 2;
@@ -86,10 +87,22 @@
             this.label2.Text = "Enter Patient Symptoms";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(602, 449);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(151, 32);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // NurseDashboardUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSendToDoctor);
@@ -111,5 +124,6 @@
         private System.Windows.Forms.Button btnSendToDoctor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
