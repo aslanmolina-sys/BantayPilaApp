@@ -20,11 +20,11 @@ namespace BantayPilaApp
 
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
-            // Check if the guard left the name blank
+         
             if (string.IsNullOrWhiteSpace(txtFullName.Text) || cmbGender.SelectedItem == null || cmbPriority.SelectedItem == null)
             {
                 MessageBox.Show("Please fill out Name, Gender, and Priority!", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Stop the code right here
+                return; 
             }
 
             string connString = "Data Source=bantaypila.db;Version=3;";
@@ -35,7 +35,7 @@ namespace BantayPilaApp
                 {
                     conn.Open();
 
-                    // 1. Save the Patient to the database
+            
                     string insertPatientQuery = "INSERT INTO Patients (FullName, Gender) VALUES (@name, @gender)";
                     using (SQLiteCommand cmdPatient = new SQLiteCommand(insertPatientQuery, conn))
                     {
@@ -44,7 +44,7 @@ namespace BantayPilaApp
                         cmdPatient.ExecuteNonQuery();
                     }
 
-                    // 2. Get the ID of the patient we just created
+
                     string getIDQuery = "SELECT last_insert_rowid()";
                     long newPatientID;
                     using (SQLiteCommand cmdGetID = new SQLiteCommand(getIDQuery, conn))
@@ -52,7 +52,7 @@ namespace BantayPilaApp
                         newPatientID = (long)cmdGetID.ExecuteScalar();
                     }
 
-                    // 3. Put that patient into the Queue (Visits table)
+                 
                     string insertVisitQuery = "INSERT INTO Visits (PatientID, Priority, Status) VALUES (@patID, @priority, 'Pending_Nurse')";
                     using (SQLiteCommand cmdVisit = new SQLiteCommand(insertVisitQuery, conn))
                     {
@@ -61,7 +61,7 @@ namespace BantayPilaApp
                         cmdVisit.ExecuteNonQuery();
                     }
 
-                    // 4. Success Message & Clear the form for the next person
+                    
                     MessageBox.Show(txtFullName.Text + " has been successfully added to the queue!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     txtFullName.Clear();
@@ -82,19 +82,19 @@ namespace BantayPilaApp
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            // 1. Ask the user if they are sure they want to log out
+       
             DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                // 2. Create a fresh Login screen
+              
                 LoginUC loginScreen = new LoginUC();
                 loginScreen.Dock = DockStyle.Fill;
 
-                // 3. Inject the Login screen back into the main window
+              
                 this.Parent.Controls.Add(loginScreen);
 
-                // 4. Destroy the current Guard dashboard
+             
                 this.Parent.Controls.Remove(this);
             }
         }

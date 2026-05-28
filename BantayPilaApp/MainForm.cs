@@ -15,13 +15,13 @@ namespace BantayPilaApp
         public MainForm()
         {
             InitializeComponent();
-            // 1. Create the login screen
+           
             LoginUC loginScreen = new LoginUC();
 
-            // 2. Make it stretch to fill the space
+          
             loginScreen.Dock = DockStyle.Fill;
 
-            // 3. Inject it into the main panel
+           
             panelMain.Controls.Add(loginScreen);
         }
 
